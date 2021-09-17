@@ -3,7 +3,7 @@
 # used for the private internal network
 mac_address_mapping:
   "b8:27:eb:b1:9b:6a":
-    name: kube00
+    name: cluster-monitor
     ip: "192.168.1.70" 
     eth0:
       ip: "10.0.1.70" 
