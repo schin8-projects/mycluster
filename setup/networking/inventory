@@ -1,0 +1,7 @@
+# Current WIFI IP to access via ansible.
+[dramble]
+#192.168.1.71
+192.168.1.72
+
+[dramble:vars]
+ansible_ssh_user=pi

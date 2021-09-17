@@ -1,0 +1,22 @@
+# Mapping of what hardware MAC addresses should be configured with specific IPs.
+# Note: The mac address should be for the wlan0 device.  The eth0 interface is
+# used for the private internal network
+mac_address_mapping:
+  "e4:5f:01:50:3d:68":
+    name: kube01
+    ip: "192.168.1.71" 
+    eth0:
+      ip: "10.0.1.71" 
+  "dc:a6:32:e8:cd:c9":
+    name: kube02
+    ip: "192.168.1.72"
+    eth0:
+      ip: "10.0.1.72"        
+
+# Nameservers to use in resolv.conf.
+dns_nameservers:
+  - "8.8.8.8"
+  - "1.1.1.1"
+
+dramble_ip_gateway: "192.168.1.1"
+
