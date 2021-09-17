@@ -4,7 +4,7 @@
 # Setup internal network
 interface eth0
 static ip_address={{ dramble_eth0_address }}/24
-#static routers={{ dramble_ip_gateway }}
+#static routers={{ private_ip_gateway }}
 #static domain_name_servers={{ dns_nameservers | join(' ') }}
 
 # Setup external access

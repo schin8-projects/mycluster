@@ -7,8 +7,9 @@ ff02::2   ip6-allrouters
 
 127.0.1.1 {{ dramble_hostname }}
 
+# Steve: format loop.index to include leading zero
+
 {# Add an entry for each host in the cluster, using the loop index to map IPs #}
 {% for host in groups['dramble'] %}
-# Steve: format loop.index to include leading zero
 10.0.1.{{ 70 + loop.index }} kube{{ "%02d" | format(loop.index) }} kube0{{ "%02d" | format(loop.index) }}.local
 {% endfor %}

@@ -6,9 +6,15 @@
     - vars.yml
 
   tasks:
+    # Debugging
+    # - name: Get the MAC address
+    #   debug: msg="{{ hostvars[inventory_hostname] }}"
+
     - name: Set the current MAC address for wlan0.
       set_fact:
-        dramble_mac_address: "{{ hostvars[inventory_hostname].ansible_default_ipv4.macaddress }}"
+        # default for our machines is eth0, which isn't what we want
+        #dramble_mac_address: "{{ hostvars[inventory_hostname].ansible_default_ipv4.macaddress }}"
+        dramble_mac_address: "{{ hostvars[inventory_hostname].ansible_wlan0.macaddress }}"
 
     - name: Set variables based on wlan0 MAC address.
       set_fact:
